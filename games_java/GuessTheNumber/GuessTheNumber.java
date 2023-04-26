@@ -12,15 +12,37 @@ public class GuessTheNumber {
 
 		int guess = 0;
 
-		while (guess != num) {
-			System.out.println("Guess the Number 1-100");
-			guess = sc.nextInt();
-			if (guess > num) {
-				System.out.println("guess is too high!");
-			} else if (guess < num) {
-				System.out.println("guess is too low!");
+		int turn = 0;
+
+		while (true) {
+			while (guess != num && turn < 7) {
+				System.out.println("Guess the Number 1-100");
+				guess = sc.nextInt();
+
+				if (guess >= 1 && guess <= 100) {
+
+					if (guess > num) {
+						System.out.println("guess is too high!");
+						turn++;
+					} else if (guess < num) {
+						System.out.println("guess is too low!");
+						turn++;
+					} else {
+						System.out.println("Correct!");
+					}
+				} else {
+					System.out.println("It is out of range!");
+				}
+			}
+			System.out.println("You are out of attempts!");
+
+			System.out.println("Want to try again?");
+			String again = sc.nextLine();
+
+			if (again.charAt(0) == 'y') {
+				turn = 0;
 			} else {
-				System.out.println("Correct!");
+				break;
 			}
 		}
 
