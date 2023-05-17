@@ -1,4 +1,4 @@
-package games_java.Hangman;
+package java.Hangman;
 
 import java.util.Scanner;
 

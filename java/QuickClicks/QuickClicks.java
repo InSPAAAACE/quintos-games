@@ -1,6 +1,6 @@
-package games_java.QuickClicks;
+package java.QuickClicks;
 
-import static games_java.QuintOS.*;
+import static java.QuintOS.*;
 
 import java.time.Instant;
 
